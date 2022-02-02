@@ -1,0 +1,40 @@
+first we captured a video
+turn it into gray
+blured it with gaussian blur
+iterated the frames and if the first is empty we made it the gray
+else if its not empty continue
+find the absdiff between the first frame and gray 
+we went on to find the threshold of the absdiff
+then finally dilated it
+
+we went on to find contours
+the condition is if a contour is more than 10000 it should continue to loop
+else we bound it(object or frame captured) with rectangle
+we finally define the size of the rectangle
+NOTE with the face detection, someone has already written a code to do the detection
+here we are trying to detect obj based on the contour
+
+then we created a variable, status to track when an item is detect or not
+0 not 
+1 detected
+
+but since it will be a series of in and out, we decided to use a list to capture in and out
+we used to if command to capture when an item moves from no ob to yes 
+and from yes to no
+
+we used datetime obj created a list called time
+we used this list to capture various in and out of an obj by appending now() to the condition above
+
+we call the time list and it reported those times
+
+then we went further
+by creating a csv file to hold those times
+
+first we import the pandas library
+we create a pandas object with two col start and end
+then after printing and seeing our time list
+we decided to loop the list making the first timing as the start
+and the second as the end
+
+but we had to make it in a dictionary form which pandas data obj recognise
+
